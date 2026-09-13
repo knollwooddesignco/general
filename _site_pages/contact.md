@@ -10,3 +10,7 @@ product_category: All Products
 eyebrow: Get in touch
 intro: Questions about availability, custom orders, or an upcoming craft fair?
 ---
+- Email
+- Shop
+- Instagram
+
