@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ page.meta_description | default: site.data.site.meta_description | escape }}">
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} | {% endif %}{{ site.data.site.business_name }}</title>
+  <link rel="stylesheet" href="{{ site.github.url }}/styles.css">
+  <script defer src="{{ site.github.url }}/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include header.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>
