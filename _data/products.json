@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Bags & Totes",
+    "category": "Bags & Totes",
+    "description": "Practical handmade bags for errands, gifts, markets, and everyday carry.",
+    "price": 0,
+    "image": "",
+    "button_label": "Ask what’s available",
+    "button_url": "/contact/",
+    "available": true,
+    "show": true
+  },
+  {
+    "title": "Mugs & Giftables",
+    "category": "Mugs & Drinkware",
+    "description": "Seasonal and personality-driven designs made for gifting or keeping.",
+    "price": 0,
+    "image": "",
+    "button_label": "Ask what’s available",
+    "button_url": "/contact/",
+    "available": true,
+    "show": true
+  },
+  {
+    "title": "Holiday & Fall",
+    "category": "Ornaments & Seasonal",
+    "description": "Small-batch seasonal pieces for autumn, Halloween, holidays, and craft fairs.",
+    "price": 0,
+    "image": "",
+    "button_label": "Ask what’s available",
+    "button_url": "/contact/",
+    "available": true,
+    "show": true
+  }
+]

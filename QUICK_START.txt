@@ -1,0 +1,53 @@
+KNOLLWOOD MULTI-PAGE UPGRADE
+
+IMPORTANT: This version uses GitHub Pages' built-in Jekyll processing so it can create real pages and subpages.
+
+BEFORE THIS VERSION WILL WORK:
+1. Upload/replace the files from this package in your repository.
+2. DELETE the existing .nojekyll file from the repository. This is required.
+3. Replace the old .pages.yml with the new .pages.yml from this package.
+   - A second copy named pages.yml is included in case your computer does not show files beginning with a period.
+   - If needed, upload pages.yml, then rename it to .pages.yml in GitHub.
+4. Keep GitHub Pages set to Deploy from a branch -> main -> /(root).
+5. Wait for GitHub Pages to rebuild.
+
+PAGES CMS:
+After the new .pages.yml is active, reopen Pages CMS.
+You will now see a new section called Pages.
+
+Creating a main page:
+- Page Title: example "Gallery"
+- Menu Label: "Gallery"
+- Page ID: gallery
+- Parent Page: leave empty
+- Page URL: /gallery/
+- Menu Order: choose a number
+- Show in Navigation: on
+- Page Type: Standard Content Page
+- Add your text in Page Content
+- Save
+
+Creating a subpage:
+- Page Title: example "Christmas"
+- Menu Label: "Christmas"
+- Page ID: christmas
+- Parent Page: choose the parent, for example Shop
+- Page URL: /shop/christmas/
+- Menu Order: choose a number
+- Show in Navigation: on
+- Choose Page Type
+- Save
+
+The website automatically creates a dropdown menu when a main page has subpages.
+
+CURRENT TEST REPOSITORY:
+The hidden Site Content field base_path is currently set to /test2 because your repository is named test2.
+If you rename the GitHub repository later, this value must also be changed.
+
+
+UPDATED SHOP STRUCTURE:
+- Shop
+  - Bags & Totes
+  - Mugs & Drinkware
+  - Ornaments & Seasonal
+  - Other Gifts

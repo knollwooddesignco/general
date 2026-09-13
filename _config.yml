@@ -1,0 +1,18 @@
+title: Knollwood Design Company
+description: Handmade goods and seasonal crafts
+markdown: kramdown
+
+collections:
+  site_pages:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: site_pages
+    values:
+      layout: page
+
+exclude:
+  - QUICK_START.txt
+  - pages.yml

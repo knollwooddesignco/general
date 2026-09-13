@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="brand footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M32 6c-8 7-12 14-11 21 1 6 5 10 11 12 6-2 10-6 11-12 1-7-3-14-11-21Z"/>
+          <path d="M32 39v18M32 43c-6-1-10-4-13-8M32 47c6-1 10-4 13-8"/>
+        </svg>
+      </span>
+      <span>
+        <strong>{{ site.data.site.brand_name }}</strong>
+        <small>{{ site.data.site.brand_subtitle }}</small>
+      </span>
+    </div>
+
+    <div class="footer-links">
+      {% assign footer_pages = site.site_pages | where_exp: "p", "p.show_in_nav != false" | sort: "nav_order" %}
+      {% for p in footer_pages %}
+        {% if p.parent_key == nil or p.parent_key == "" %}
+          <a href="{% include url.html url=p.permalink %}">{{ p.menu_label | default: p.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <p class="copyright">© <span id="year"></span> {{ site.data.site.business_name }}. All rights reserved.</p>
+  </div>
+</footer>

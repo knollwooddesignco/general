@@ -1,0 +1,25 @@
+<div class="events-list">
+  {% assign visible_events = site.data.events | where_exp: "e", "e.show != false" %}
+  {% for event in visible_events %}
+    <div class="event-card">
+      <div>
+        <span class="event-date">{{ event.label | default: "EVENT" }}</span>
+        <h3>{{ event.name }}</h3>
+        {% if event.date_and_time != "" or event.location != "" %}
+          <p class="event-meta">
+            {% if event.date_and_time != "" %}{{ event.date_and_time }}{% endif %}
+            {% if event.date_and_time != "" and event.location != "" %} • {% endif %}
+            {% if event.location != "" %}{{ event.location }}{% endif %}
+          </p>
+        {% endif %}
+        {% if event.description != "" %}<p>{{ event.description }}</p>{% endif %}
+      </div>
+      {% if event.button_label != "" %}
+        <a class="button secondary" href="{% include url.html url=event.button_url %}">{{ event.button_label }}</a>
+      {% endif %}
+    </div>
+  {% endfor %}
+  {% if visible_events.size == 0 %}
+    <p class="load-note">No upcoming events are listed yet.</p>
+  {% endif %}
+</div>

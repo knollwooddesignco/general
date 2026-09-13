@@ -1,0 +1,20 @@
+<div class="contact-panel">
+  <p class="contact-label">Preferred contact method</p>
+  {% if site.data.site.contact_url and site.data.site.contact_url != "" %}
+    <a class="contact-link" href="{% include url.html url=site.data.site.contact_url %}">{{ site.data.site.contact_link_text }}</a>
+  {% else %}
+    <span class="contact-link muted-contact">{{ site.data.site.contact_link_text }}</span>
+  {% endif %}
+
+  <div class="social-links">
+    {% if site.data.site.shop_url and site.data.site.shop_url != "" %}
+      <a href="{{ site.data.site.shop_url }}">Shop</a>
+    {% endif %}
+    {% if site.data.site.instagram_url and site.data.site.instagram_url != "" %}
+      <a href="{{ site.data.site.instagram_url }}">Instagram</a>
+    {% endif %}
+    {% if site.data.site.facebook_url and site.data.site.facebook_url != "" %}
+      <a href="{{ site.data.site.facebook_url }}">Facebook</a>
+    {% endif %}
+  </div>
+</div>

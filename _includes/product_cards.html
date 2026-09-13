@@ -1,0 +1,36 @@
+{% assign visible_products = site.data.products | where_exp: "p", "p.show != false" %}
+{% if include.category and include.category != "" and include.category != "All Products" %}
+  {% assign visible_products = visible_products | where: "category", include.category %}
+{% endif %}
+<div class="product-grid">
+  {% for product in visible_products %}
+    <article class="product-card{% if product.available == false %} is-unavailable{% endif %}">
+      {% if product.image and product.image != "" %}
+        <div class="product-visual has-image">
+          <img src="{% include url.html url=product.image %}" alt="{{ product.title | escape }}" loading="lazy">
+        </div>
+      {% else %}
+        <div class="product-visual product-placeholder">
+          <span>{{ product.category }}</span>
+        </div>
+      {% endif %}
+      <div class="product-copy">
+        <span class="tag">{{ product.category }}</span>
+        <h3>{{ product.title }}</h3>
+        {% if product.price and product.price > 0 %}
+          <p class="product-price">${{ product.price | round: 2 }}</p>
+        {% endif %}
+        {% if product.available == false %}
+          <span class="availability-note">Currently unavailable</span>
+        {% endif %}
+        <p>{{ product.description }}</p>
+        {% if product.button_label and product.button_label != "" %}
+          <a href="{% include url.html url=product.button_url %}">{{ product.button_label }} <span aria-hidden="true">→</span></a>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+</div>
+{% if visible_products.size == 0 %}
+  <p class="load-note">No products are listed in this category yet.</p>
+{% endif %}

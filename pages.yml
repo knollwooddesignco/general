@@ -1,0 +1,329 @@
+media:
+  - name: product_images
+    label: Product Images
+    input: media/images
+    output: /media/images
+    rename: safe
+    categories: [image]
+
+content:
+  - name: site
+    label: Site Content
+    type: file
+    path: _data/site.json
+    format: json
+    fields:
+      - name: base_path
+        label: GitHub Base Path
+        type: string
+        hidden: true
+
+      - name: brand_name
+        label: Brand Name
+        type: string
+        required: true
+      - name: brand_subtitle
+        label: Brand Subtitle
+        type: string
+      - name: business_name
+        label: Full Business Name
+        type: string
+        required: true
+      - name: meta_description
+        label: Search Description
+        type: text
+
+      - name: hero_eyebrow
+        label: Homepage Small Heading
+        type: string
+      - name: hero_title
+        label: Homepage Main Heading
+        type: string
+        required: true
+      - name: hero_text
+        label: Homepage Intro
+        type: text
+      - name: hero_primary_label
+        label: Main Button Text
+        type: string
+      - name: hero_primary_url
+        label: Main Button Link
+        type: string
+        description: Internal links start with /, for example /shop/.
+      - name: hero_secondary_label
+        label: Second Button Text
+        type: string
+      - name: hero_secondary_url
+        label: Second Button Link
+        type: string
+        description: Internal links start with /, for example /custom-orders/.
+      - name: trust_points
+        label: Homepage Highlights
+        type: string
+        list:
+          min: 1
+          max: 4
+
+      - name: home_products_eyebrow
+        label: Featured Products Small Heading
+        type: string
+      - name: home_products_heading
+        label: Featured Products Heading
+        type: string
+      - name: home_products_intro
+        label: Featured Products Intro
+        type: text
+
+      - name: about_eyebrow
+        label: Homepage About Small Heading
+        type: string
+      - name: about_heading
+        label: Homepage About Heading
+        type: string
+      - name: about_paragraph_1
+        label: Homepage About Paragraph 1
+        type: text
+      - name: about_paragraph_2
+        label: Homepage About Paragraph 2
+        type: text
+      - name: about_quote
+        label: Homepage About Quote
+        type: text
+
+      - name: contact_link_text
+        label: Contact Link Text
+        type: string
+      - name: contact_url
+        label: Contact Link
+        type: string
+        description: Use mailto:you@example.com or paste a full web link.
+      - name: shop_url
+        label: Online Shop Link
+        type: string
+      - name: instagram_url
+        label: Instagram Link
+        type: string
+      - name: facebook_url
+        label: Facebook Link
+        type: string
+
+  - name: pages
+    label: Pages
+    type: collection
+    path: _site_pages
+    format: yaml-frontmatter
+    filename:
+      template: "{nav_key}.md"
+      field: false
+    view:
+      primary: title
+      fields: [menu_label, parent_key, page_type, show_in_nav]
+      sort: [nav_order, title]
+      default:
+        sort: nav_order
+        order: asc
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        required: true
+
+      - name: menu_label
+        label: Menu Label
+        type: string
+        description: Short name shown in the navigation menu.
+
+      - name: nav_key
+        label: Page ID
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9-]+$"
+          message: Use lowercase letters, numbers, and hyphens only.
+        description: A unique ID such as shop, about, or bags-totes. Do not change it after other pages use it as a parent.
+
+      - name: parent_key
+        label: Parent Page
+        type: reference
+        options:
+          collection: pages
+          value: "{fields.nav_key}"
+          label: "{fields.title}"
+          search: "title,menu_label,nav_key"
+        description: Leave empty for a main menu page. Choose another page to make this a subpage.
+
+      - name: permalink
+        label: Page URL
+        type: string
+        required: true
+        pattern:
+          regex: "^/.*?/$"
+          message: Start and end with a slash, for example /about/ or /shop/bags-totes/.
+        description: The address after your website name.
+
+      - name: nav_order
+        label: Menu Order
+        type: number
+        description: Lower numbers appear first.
+
+      - name: show_in_nav
+        label: Show in Navigation
+        type: boolean
+
+      - name: page_type
+        label: Page Type
+        type: select
+        required: true
+        options:
+          values:
+            - name: standard
+              label: Standard Content Page
+            - name: shop
+              label: Product / Shop Page
+            - name: events
+              label: Craft Fairs & Events Page
+            - name: contact
+              label: Contact Page
+
+      - name: product_category
+        label: Product Category
+        type: select
+        options:
+          values:
+            - All Products
+            - Bags & Totes
+            - Mugs & Drinkware
+            - Ornaments & Seasonal
+            - Other Gifts
+        description: Used only for Product / Shop pages.
+
+      - name: eyebrow
+        label: Small Heading
+        type: string
+
+      - name: intro
+        label: Intro
+        type: text
+
+      - name: hero_image
+        label: Hero Image
+        type: image
+        options:
+          media: product_images
+          rename: safe
+
+      - name: body
+        label: Page Content
+        type: rich-text
+        options:
+          media: product_images
+          rename: safe
+          switcher: false
+
+  - name: products
+    label: Products
+    type: file
+    path: _data/products.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Product Name
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - Bags & Totes
+            - Mugs & Drinkware
+            - Ornaments & Seasonal
+            - Other Gifts
+      - name: description
+        label: Description
+        type: text
+      - name: price
+        label: Price
+        type: number
+        description: Enter 0 if you do not want a price displayed.
+      - name: image
+        label: Product Photo
+        type: image
+        options:
+          media: product_images
+          rename: safe
+      - name: button_label
+        label: Button Text
+        type: string
+      - name: button_url
+        label: Button Link
+        type: string
+        description: Paste a Square link, another shop link, or use /contact/.
+      - name: available
+        label: Available
+        type: boolean
+      - name: show
+        label: Show on Website
+        type: boolean
+
+  - name: events
+    label: Craft Fairs & Events
+    type: file
+    path: _data/events.json
+    format: json
+    list: true
+    fields:
+      - name: label
+        label: Small Label
+        type: string
+      - name: name
+        label: Event Name
+        type: string
+        required: true
+      - name: date_and_time
+        label: Date and Time
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: button_label
+        label: Button Text
+        type: string
+      - name: button_url
+        label: Button Link
+        type: string
+      - name: show
+        label: Show on Website
+        type: boolean
+
+  - name: faqs
+    label: FAQs
+    type: file
+    path: _data/faqs.json
+    format: json
+    list: true
+    fields:
+      - name: question
+        label: Question
+        type: string
+        required: true
+      - name: answer
+        label: Answer
+        type: text
+        required: true
+      - name: show
+        label: Show on Website
+        type: boolean
+
+settings:
+  commit:
+    templates:
+      update: "Update {name} via Pages CMS"
+      create: "Add {name} via Pages CMS"
+      delete: "Remove {name} via Pages CMS"
+      rename: "Rename {oldPath} to {newPath} via Pages CMS"

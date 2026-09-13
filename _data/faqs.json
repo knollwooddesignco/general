@@ -1,0 +1,17 @@
+[
+  {
+    "question": "Are all items handmade?",
+    "answer": "Update this answer in Pages CMS to explain which pieces you make yourself and whether any components are commercially sourced.",
+    "show": true
+  },
+  {
+    "question": "Do you accept custom orders?",
+    "answer": "Yes — subject to availability. Update this answer with your preferred lead time and any limitations.",
+    "show": true
+  },
+  {
+    "question": "Where can I buy?",
+    "answer": "List your current craft fairs, direct-order options, and online shop links here once they are active.",
+    "show": true
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "base_path": "/test2",
+  "brand_name": "Knollwood",
+  "brand_subtitle": "Design Company",
+  "business_name": "Knollwood Design Company",
+  "meta_description": "Knollwood Design Company — handmade sewn goods and seasonal crafts made with care.",
+  "hero_eyebrow": "Handmade in small batches",
+  "hero_title": "Useful things, thoughtfully made.",
+  "hero_text": "Handmade sewn goods and seasonal crafts created with practical details, cozy character, and a little bit of personality.",
+  "hero_primary_label": "Shop handmade goods",
+  "hero_primary_url": "/shop/",
+  "hero_secondary_label": "Ask about a custom order",
+  "hero_secondary_url": "/custom-orders/",
+  "trust_points": [
+    "Small-batch",
+    "Handmade",
+    "Craft-fair friendly",
+    "Custom requests welcome"
+  ],
+  "home_products_eyebrow": "Featured collections",
+  "home_products_heading": "Made for everyday use — and a little fun.",
+  "home_products_intro": "Browse a few current categories, then visit the Shop for everything available.",
+  "about_eyebrow": "About Knollwood",
+  "about_heading": "Handmade should feel personal.",
+  "about_paragraph_1": "Knollwood Design Company creates handmade sewn goods and related crafts in small batches. The goal is simple: make useful, giftable pieces that feel more special than something pulled from a warehouse shelf.",
+  "about_paragraph_2": "Because pieces are made in limited runs, fabrics, colors, and seasonal designs can change throughout the year.",
+  "about_quote": "Made carefully. Sold simply. Designed to be used and enjoyed.",
+  "contact_link_text": "Add your contact link in Pages CMS",
+  "contact_url": "",
+  "shop_url": "",
+  "instagram_url": "",
+  "facebook_url": ""
+}

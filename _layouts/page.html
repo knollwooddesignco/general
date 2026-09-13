@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<section class="page-hero{% if page.hero_image and page.hero_image != '' %} with-image{% endif %}">
+  <div class="container page-hero-grid">
+    <div>
+      {% if page.eyebrow and page.eyebrow != "" %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.intro and page.intro != "" %}<p class="page-intro">{{ page.intro }}</p>{% endif %}
+    </div>
+    {% if page.hero_image and page.hero_image != "" %}
+      <div class="page-hero-image">
+        <img src="{% include url.html url=page.hero_image %}" alt="">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section page-section">
+  <div class="container">
+    {% if page.page_type == "shop" %}
+      {% if content and content != "" %}
+        <div class="rich-content page-copy">{{ content }}</div>
+      {% endif %}
+      {% include product_cards.html category=page.product_category %}
+
+    {% elsif page.page_type == "events" %}
+      {% if content and content != "" %}
+        <div class="rich-content page-copy">{{ content }}</div>
+      {% endif %}
+      {% include events.html %}
+
+    {% elsif page.page_type == "contact" %}
+      <div class="contact-page-grid">
+        <div class="rich-content page-copy">{{ content }}</div>
+        {% include contact.html %}
+      </div>
+
+    {% else %}
+      <div class="rich-content page-copy">{{ content }}</div>
+    {% endif %}
+  </div>
+</section>
