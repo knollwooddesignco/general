@@ -1,0 +1,61 @@
+{
+  "brand_name": "Knollwood",
+  "brand_subtitle": "Design Company",
+  "business_name": "Knollwood Design Company",
+  "meta_description": "Knollwood Design Company — handmade sewn goods and seasonal crafts made with care.",
+  "hero_eyebrow": "Handmade in small batches",
+  "hero_title": "Useful things, thoughtfully made.",
+  "hero_text": "Handmade sewn goods and seasonal crafts created with practical details, cozy character, and a little bit of personality.",
+  "hero_primary_label": "Browse handmade goods",
+  "hero_primary_url": "#shop",
+  "hero_secondary_label": "Ask about a custom order",
+  "hero_secondary_url": "#custom",
+  "trust_points": [
+    "Small-batch",
+    "Handmade",
+    "Craft-fair friendly",
+    "Custom requests welcome"
+  ],
+  "shop_eyebrow": "What we make",
+  "shop_heading": "Made for everyday use — and a little fun.",
+  "shop_intro": "Browse current products below. Photos, prices, descriptions, and purchase links can all be changed from Pages CMS.",
+  "about_eyebrow": "About Knollwood",
+  "about_heading": "Handmade should feel personal.",
+  "about_paragraph_1": "Knollwood Design Company creates handmade sewn goods and related crafts in small batches. The goal is simple: make useful, giftable pieces that feel more special than something pulled from a warehouse shelf.",
+  "about_paragraph_2": "Because pieces are made in limited runs, fabrics, colors, and seasonal designs can change throughout the year.",
+  "about_quote": "Made carefully. Sold simply. Designed to be used and enjoyed.",
+  "custom_eyebrow": "Custom orders",
+  "custom_heading": "Looking for something a little different?",
+  "custom_text": "Made-to-order requests, color preferences, personalized gifts, and small custom batches may be available depending on the project and schedule.",
+  "custom_button_label": "Start a custom request",
+  "custom_button_url": "#contact",
+  "custom_steps": [
+    {
+      "title": "Tell us the idea",
+      "text": "Item, style, color, quantity, and timing."
+    },
+    {
+      "title": "Confirm details",
+      "text": "Availability, price, and expected completion."
+    },
+    {
+      "title": "Make it",
+      "text": "Your piece is created and prepared for pickup or delivery."
+    }
+  ],
+  "events_eyebrow": "Find us in person",
+  "events_heading": "Craft fairs & local events",
+  "events_intro": "Upcoming fairs and markets will appear here.",
+  "contact_eyebrow": "Contact",
+  "contact_heading": "Questions, availability, or custom orders?",
+  "contact_text": "Use your preferred contact link below. You can also add your shop and social profiles.",
+  "contact_label": "Preferred contact method",
+  "contact_link_text": "Add your email or social link in Pages CMS",
+  "contact_url": "",
+  "contact_note": "This is a placeholder until you add your real contact link.",
+  "shop_url": "",
+  "instagram_url": "",
+  "facebook_url": "",
+  "faq_eyebrow": "Good to know",
+  "faq_heading": "Frequently asked questions"
+}
