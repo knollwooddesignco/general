@@ -1,7 +1,7 @@
 {
   "base_path": "/test2",
-  "brand_name": "Knollwood",
-  "brand_subtitle": "Design Company",
+  "brand_name": "Knollwood Design Company",
+  "brand_subtitle": "Handmade with care",
   "business_name": "Knollwood Design Company",
   "meta_description": "Knollwood Design Company — handmade sewn goods and seasonal crafts made with care.",
   "hero_eyebrow": "Handmade in small batches",
@@ -25,9 +25,5 @@
   "about_paragraph_1": "Knollwood Design Company creates handmade sewn goods and related crafts in small batches. The goal is simple: make useful, giftable pieces that feel more special than something pulled from a warehouse shelf.",
   "about_paragraph_2": "Because pieces are made in limited runs, fabrics, colors, and seasonal designs can change throughout the year.",
   "about_quote": "Made carefully. Sold simply. Designed to be used and enjoyed.",
-  "contact_link_text": "Add your contact link in Pages CMS",
-  "contact_url": "",
-  "shop_url": "",
-  "instagram_url": "",
-  "facebook_url": ""
+  "contact_link_text": "Add your contact link in Pages CMS"
 }
